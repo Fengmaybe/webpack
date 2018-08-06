@@ -145,6 +145,7 @@
 			babel-presets-env: 包含es2015/es2016/es2017所有新的标准语法的解析器
 			babel-presets-stage-2: 包含了一些草案语法的解析器(如: import())
 			babel-plugin-transform-runtime: 此包能减小编译生成的es5代码
+			一个预设包是多个插件组成的集合
 
     2). webpack配置: webpack.config.js
         const path = require('path') // node内置模块(操作路径信息)
