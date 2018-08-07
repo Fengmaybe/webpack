@@ -30,10 +30,12 @@ module.exports = merge(baseConfig, {  // 开发环境特有的配置
 });
 
 /*
+
 问题1：
 在开发环境下，是在内存中打包的，如果用webpack打包命令，在本地就会有。
 故用webpack-dev-server代替webpack命令
 两个作用：
 ①内存打包  --config config/webpack.dev.conf.js
 ②自动打开浏览器  --open
+
  */

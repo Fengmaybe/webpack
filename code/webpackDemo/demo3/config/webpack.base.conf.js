@@ -8,7 +8,6 @@ function resolve(dir) {
   //__dirname是node自带的，其是指当前文件所在目录，故要退出一层。找到demo3的绝对路径。
   return path.resolve(__dirname, '..', dir);
 }
-
 /*
  webpack基础配置
  */
@@ -22,7 +21,6 @@ module.exports = {
   output: {
     path: resolve('dist'),  // 所有打包文件的基础路径
   },
-
   // 3. 模块加载器
   module: {
     rules: [

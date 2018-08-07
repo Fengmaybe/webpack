@@ -5,8 +5,8 @@
         实现live-reload
         开启sourceMap调试
     3). 生产环境: 
-        单独打包css, 
-        单独打包第三方JS包, 
+        单独打包css,
+        单独打包第三方JS包,
         打包文件缓存处理
         压缩JS/CSS
     4). 代码分割(code split)与懒加载(lazy load)
@@ -230,6 +230,7 @@
             new webpack.optimize.UglifyJsPlugin({
 			  sourceMap: true
             })
+             new webpack.HashedModuleIdsPlugin() // 将模块的hash值作为模块的id
           ]
         })
     
