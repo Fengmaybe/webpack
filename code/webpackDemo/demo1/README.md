@@ -17,8 +17,8 @@
     npm init -y
     
 ## 3. 下载webpack
-    npm install webpack -g   //全局下载webpack
-    npm install webpack --save-dev  //下载webpack为开发依赖
+    npm install webpack@3 -g   //全局下载webpack
+    npm install webpack@3 --save-dev  //下载webpack为开发依赖
     
 ## 4. 编码
     1). bar.js

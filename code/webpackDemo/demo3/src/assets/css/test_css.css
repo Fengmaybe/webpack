@@ -1,0 +1,10 @@
+body {
+  padding: 20px;
+  background: url("../img/bg.jpg");
+  background-size: 100% 100%;
+  font-size: 20px;
+}
+.lesson-name {
+  color: lightcoral;
+  font-size: 25px;
+}

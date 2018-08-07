@@ -1,31 +1,42 @@
-import $ from 'jquery'
-import {cube} from "./js/math"
-import lessons from './assets/json/lessons.json'
-// import './assets/css/test1.css'
-import './assets/css/test2.styl'
-
-console.log(cube(3))
+/*
+入口js文件
+ */
+//测试第三方模块
+import $ from 'jquery';
+//测试自定义模块
+import {cube} from "./js/math";
+//测试CSS
+import './assets/css/test_css.css';
+//测试styl
+//import './assets/css/test_styl.styl'
+//测试json（webpack自带了,不需要下载了）
+import data from './assets/json/data';
 
 $(function () {
-  const $app = $('#app')
-  // 根据json数据显示一个列表
-  const $ul = $('<ul>')
-  $app.append($ul)
-  lessons.forEach(lesson => {
-    $ul.append(`<li>课程名: <span class="lesson-name">${lesson.name}</span>, 时间: ${lesson.days}天</li>`)
-  })
+  //找到#app的元素标签
+  const $app = $('#app');
+//创建ul
+  const $ul = $('<ul>');
+//生成li并插入到ul中
+  data.forEach((item) => {
+    $ul.append(`<li>葵花宝典: <span class="lesson-name">${item.name}</span>, 时间: ${item.days}天</li>`);
+  });
+//ul插入到app中
+  $app.append($ul);
 
   // 添加一个按钮
-  const $button = $('<button>我要学习</button>')
+  const $button = $('<button>点我一下</button>')
   $button.click(function () {
-    // import()加载的模块会被单独打包, 只有执行import()时才会去后台请求获取这个包
-    import('./js/atguigu').then(atguigu => {
-      if(atguigu.studyConfirm()) {
-        atguigu.goAtguigu()
+    import('./js/clickMe.js').then(obj => {
+      if (obj.studyConfirm()) {
+        obj.goBaidu()
       }
     })
-  })
+  });
   $app.append($button)
-})
 
-new Object()
+});
+
+
+console.log(cube(3));
+
