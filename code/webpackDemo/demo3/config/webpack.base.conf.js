@@ -24,6 +24,16 @@ module.exports = {
   // 3. 模块加载器
   module: {
     rules: [
+      // eslint语法检查
+      {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',  //表示执行的实际比较早
+        include: [resolve('src')],  //减少搜索范围提高效率
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
+      },
       // js: es6-->es5
       {
         test: /\.js$/,
